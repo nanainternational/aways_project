@@ -55,5 +55,9 @@ def convert_excel():
         import traceback
         return f"❌ 변환 중 오류:\n{traceback.format_exc()}"
 
+import os
+
 if __name__ == "__main__":
-    app.run(debug=False, use_reloader=False)
+    port = int(os.environ.get("PORT", 5000))  # 기본 포트 5000
+    app.run(host='0.0.0.0', port=port, debug=False, use_reloader=False)
+
