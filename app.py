@@ -44,16 +44,16 @@ def convert_excel():
             "배송메세지1": df.iloc[:, 17]      # R열 → CJ I열
         })
 
-        # 저장
+        # Render 호환용 경로 (/tmp)
         now = datetime.now().strftime("%Y%m%d_%H%M")
-        output_path = os.path.join(os.path.expanduser("~"), "Desktop", f"cj_{now}.xlsx")
+        output_path = os.path.join("/tmp", f"cj_{now}.xlsx")
         cj_df.to_excel(output_path, index=False)
+
         return send_file(output_path, as_attachment=True)
 
     except Exception as e:
         import traceback
         return f"❌ 변환 중 오류:\n{traceback.format_exc()}"
-
 
 if __name__ == "__main__":
     app.run(debug=False, use_reloader=False)
