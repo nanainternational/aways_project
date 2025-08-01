@@ -78,14 +78,14 @@
   <div class="dummy">※ 엑셀 파일만 업로드하세요 (xlsx 형식)</div>
   <div class="subtext">올웨이즈에서 받은 엑셀 주문서를<br><span class="highlight">CJ대한통운 업로드 양식</span>으로 자동 변환해드립니다.</div>
 
-  <!-- ✅ 이 부분이 핵심 -->
-  <form action="/convert" method="POST" enctype="multipart/form-data">
+  <!-- ✅ 핵심: Render 서버 주소로 전송 -->
+  <form action="https://aways-project.onrender.com/convert" method="POST" enctype="multipart/form-data">
     <input type="file" name="file" required>
     <br>
     <button type="submit" class="submit-btn">변환하기</button>
   </form>
 
-  <div class="footer">© 나나인터내셔널 | 택배 자동 변환기</div>
+  <div class="footer">© 나나인터내셔널 | CJ대한통운 자동 변환기</div>
 
 </body>
 </html>
