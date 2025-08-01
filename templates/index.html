@@ -1,80 +1,91 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>올웨이즈 → CJ대한통운 변환</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fdfdfd;
-            color: #333;
-            text-align: center;
-            padding: 50px;
-        }
+  <meta charset="UTF-8">
+  <title>올웨이즈 → CJ대한통운 변환기</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      text-align: center;
+      padding: 60px 20px;
+    }
 
-        img {
-            max-width: 220px;
-            margin-bottom: 20px;
-        }
+    img {
+      max-width: 220px;
+      margin-bottom: 20px;
+    }
 
-        h2 {
-            color: #b00000;
-        }
+    h2 {
+      color: #b00000;
+      font-size: 1.6rem;
+    }
 
-        form {
-            margin-top: 30px;
-        }
+    .subtext {
+      font-size: 0.95rem;
+      margin-top: 12px;
+      color: #555;
+    }
 
-        input[type="file"] {
-            padding: 10px;
-            font-size: 1rem;
-        }
+    .highlight {
+      color: #b00000;
+      font-weight: bold;
+    }
 
-        .submit-btn {
-            margin-top: 20px;
-            padding: 10px 24px;
-            font-size: 1rem;
-            color: #b00000; /* 폰트 빨간색 */
-            background-color: #ffffff; /* 배경 흰색 */
-            border: 2px solid #b00000; /* 테두리 빨간색 */
-            border-radius: 6px;
-            cursor: pointer;
-        }
+    .dummy {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
 
-        .submit-btn:hover {
-            background-color: #ffe6e6;
-        }
+    form {
+      margin-top: 30px;
+    }
 
-        .subtext {
-            font-size: 0.95rem;
-            margin-top: 12px;
-            color: #555;
-        }
+    input[type="file"] {
+      padding: 10px;
+      font-size: 1rem;
+    }
 
-        .highlight {
-            color: #b00000;
-            font-weight: bold;
-        }
+    .submit-btn {
+      margin-top: 20px;
+      padding: 10px 24px;
+      font-size: 1rem;
+      color: #b00000;
+      background-color: #ffffff;
+      border: 2px solid #b00000;
+      border-radius: 6px;
+      cursor: pointer;
+    }
 
-        .dummy {
-            color: #aaa;
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
-    </style>
+    .submit-btn:hover {
+      background-color: #ffe6e6;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-    <img src="https://gi.esmplus.com/secsiboy2/3pl/aways.png" alt="올웨이즈 로고">
 
-    <h2>올웨이즈 셀러 아이디로 로그인해주세요</h2>
-    <div class="dummy">※ 비밀번호 찾기 기능은 현재 지원되지 않습니다</div>
+  <img src="https://gi.esmplus.com/secsiboy2/3pl/aways.png" alt="올웨이즈 로고">
 
-    <div class="subtext">아직 올웨이즈 입점사가 아니신가요?<br><span class="highlight">해당 택배사 양식으로 변환해 드릴까요?</span></div>
+  <h2>올웨이즈 주문서 → CJ대한통운 택배 양식 자동 변환기</h2>
+  <div class="dummy">※ 엑셀 파일만 업로드하세요 (xlsx 형식)</div>
+  <div class="subtext">올웨이즈에서 받은 엑셀 주문서를<br><span class="highlight">CJ대한통운 업로드 양식</span>으로 자동 변환해드립니다.</div>
 
-    <form action="/convert" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <br>
-        <button type="submit" class="submit-btn">변환하기</button>
-    </form>
+  <!-- ✅ 이 부분이 핵심 -->
+  <form action="/convert" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <br>
+    <button type="submit" class="submit-btn">변환하기</button>
+  </form>
+
+  <div class="footer">© 나나인터내셔널 | 택배 자동 변환기</div>
+
 </body>
 </html>
