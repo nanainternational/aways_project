@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>올웨이즈 판매자센터 로그인</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #e15d5d;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 80px auto;
+      background-color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    img.logo {
+      width: 160px;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      margin-bottom: 1.2rem;
+      color: #333;
+    }
+
+    .sub-text {
+      margin-bottom: 1.5rem;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #d14e4e;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #bb4444;
+    }
+
+    .reset-btn {
+      margin-top: 1rem;
+      background: none;
+      border: none;
+      color: #d14e4e;
+      font-size: 0.9rem;
+      cursor: default;
+    }
+
+    .notice-text {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .convert-form {
+      margin-top: 0.5rem;
+    }
+
+    .convert-form input[type="file"] {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .convert-form button {
+      background-color: #2c7bff;
+    }
+
+    .convert-form button:hover {
+      background-color: #1e5fcc;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://gi.esmplus.com/secsiboy2/3pl/aways.png" alt="aways logo" class="logo">
+    <h2>판매자 센터</h2>
+    <div class="sub-text">올웨이즈 셀러 아이디로 로그인해주세요</div>
+
+    <form method="POST" action="/download">
+      <input type="text" name="username" placeholder="아이디" required>
+      <input type="password" name="password" placeholder="비밀번호" required>
+      <button type="submit">로그인</button>
+    </form>
+
+    <div>
+      <button class="reset-btn">비밀번호 찾기</button>
+    </div>
+
+    <div class="notice-text">
+      해당 택배사 양식으로 변환해 드릴까요?
+    </div>
+
+    <form method="POST" action="/convert" enctype="multipart/form-data" class="convert-form">
+      <input type="file" name="file" required>
+      <button type="submit">변환하기</button>
+    </form>
+  </div>
+</body>
+</html>
