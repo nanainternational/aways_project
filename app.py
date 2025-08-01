@@ -44,20 +44,16 @@ def convert_excel():
             "배송메세지1": df.iloc[:, 17]      # R열 → CJ I열
         })
 
-        # Render 호환용 경로 (/tmp)
+        # Render 환경용 임시 저장 경로
         now = datetime.now().strftime("%Y%m%d_%H%M")
-        output_path = os.path.join("/tmp", f"cj_{now}.xlsx")
+        output_path = f"/tmp/cj_{now}.xlsx"
         cj_df.to_excel(output_path, index=False)
-
         return send_file(output_path, as_attachment=True)
 
     except Exception as e:
         import traceback
         return f"❌ 변환 중 오류:\n{traceback.format_exc()}"
 
-import os
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # 기본 포트 5000
-    app.run(host='0.0.0.0', port=port, debug=False, use_reloader=False)
-
+    app.run(debug=False, use_reloader=False, host="0.0.0.0", port=5000)
